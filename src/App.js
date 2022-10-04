@@ -7,6 +7,7 @@ import Series from "./pages/Series/Series";
 import Trending from "./pages/Trending/Trending";
 import Search from "./pages/Search/Search";
 import { Container } from "@material-ui/core";
+import { Route, Switch } from "react-router-dom";
 
 function App() {
   return (
