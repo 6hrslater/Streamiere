@@ -2,6 +2,11 @@ import { BrowserRouter } from "react-router-dom/cjs/react-router-dom.min";
 import "./App.css";
 import Header from "./components/Header/Header";
 import SimpleBottomNavigation from "./components/nav";
+import Movies from "./pages/Movies/Movies";
+import Series from "./pages/Series/Series";
+import Trending from "./pages/Trending/Trending";
+import Search from "./pages/Search/Search";
+import { Container } from "@material-ui/core";
 
 function App() {
   return (
