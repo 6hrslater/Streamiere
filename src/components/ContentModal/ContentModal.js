@@ -12,7 +12,7 @@ import {
 import "./ContentModal.css";
 import { Button } from "@material-ui/core";
 import YouTubeIcon from "@material-ui/icons/YouTube";
-import Carousel from "../Carousel/Carousel";
+import Carousel from "../carousel/carousel";
 
 const useStyles = makeStyles((theme) => ({
   modal: {

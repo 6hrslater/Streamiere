@@ -6,6 +6,7 @@ import TvIcon from "@material-ui/icons/Tv";
 import MovieIcon from "@material-ui/icons/Movie";
 import SearchIcon from "@material-ui/icons/Search";
 import WhatshotIcon from "@material-ui/icons/Whatshot";
+import PersonIcon from "@material-ui/icons/Person";
 import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles({
@@ -32,6 +33,9 @@ export default function SimpleBottomNavigation() {
             history.push("/series");
         } else if (value === 3) {
             history.push("/search");
+        }
+        else if (value === 4) {
+            history.push("/users");
         }
     }, [value, history]);
 
@@ -63,6 +67,11 @@ export default function SimpleBottomNavigation() {
                 style={{ color: "white" }}
                 label="Search"
                 icon={<SearchIcon />}
+            />
+            <BottomNavigationAction
+                style={{ color: "white" }}
+                label="User"
+                icon={<PersonIcon />}
             />
         </BottomNavigation>
     );
