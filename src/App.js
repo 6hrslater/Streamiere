@@ -10,7 +10,7 @@ import Login from "./pages/Login/Login";
 import Account from "./pages/Login/Account";
 import { Container } from "@material-ui/core";
 import { Route, Switch } from "react-router-dom";
-import { AuthContextProvider } from './context/AuthContext';
+import { AuthContextProvider } from "./context/AuthContext";
 
 
 function App() {
