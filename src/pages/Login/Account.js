@@ -21,6 +21,9 @@ const Account = () => {
     }
   }, [user]);
 
+  const handleSMS = () => {
+    axios.get("http://127.0.0.1:3001/sendSMS");
+  };
 
   return (
     <div className="w-[300px] m-auto">
@@ -28,6 +31,12 @@ const Account = () => {
       <div>
         <p>Welcome, {user?.displayName}</p>
       </div>
+
+      <button onClick={handleSignOut} className="border py-2 px-5 mt-10">
+        Logout
+      </button>
+
+      <button onClick={handleSMS}>Send SMS</button>
     </div>
   );
 };
