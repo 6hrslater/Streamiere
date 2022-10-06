@@ -35,7 +35,7 @@ export default function SimpleBottomNavigation() {
             history.push("/search");
         }
         else if (value === 4) {
-            history.push("/users");
+            history.push("/login");
         }
     }, [value, history]);
 
@@ -70,7 +70,7 @@ export default function SimpleBottomNavigation() {
             />
             <BottomNavigationAction
                 style={{ color: "white" }}
-                label="User"
+                label="Login"
                 icon={<PersonIcon />}
             />
         </BottomNavigation>
