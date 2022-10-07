@@ -37,7 +37,7 @@ export default function SimpleBottomNavigation() {
         } else if (value === 4) {
             history.push("/login");
         } else if (value === 5) {
-            history.push("/menu");
+            history.push("/event");
         }
     }, [value, history]);
 
@@ -77,7 +77,7 @@ export default function SimpleBottomNavigation() {
             />
             <BottomNavigationAction
                 style={{ color: "white" }}
-                label="Menu"
+                label="Event"
                 icon={<MenuIcon />}
             />
         </BottomNavigation>
