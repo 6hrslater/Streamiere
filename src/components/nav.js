@@ -7,6 +7,7 @@ import MovieIcon from "@material-ui/icons/Movie";
 import SearchIcon from "@material-ui/icons/Search";
 import WhatshotIcon from "@material-ui/icons/Whatshot";
 import PersonIcon from "@material-ui/icons/Person";
+import MenuIcon from "@material-ui/icons/Menu";
 import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles({
@@ -72,6 +73,11 @@ export default function SimpleBottomNavigation() {
                 style={{ color: "white" }}
                 label="Login"
                 icon={<PersonIcon />}
+            />
+            <BottomNavigationAction
+                style={{ color: "white" }}
+                label="Menu"
+                icon={<MenuIcon />}
             />
         </BottomNavigation>
     );
