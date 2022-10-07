@@ -8,6 +8,7 @@ import Trending from "./pages/Trending/Trending";
 import Search from "./pages/Search/Search";
 import Login from "./pages/Login/Login";
 import Account from "./pages/Login/Account";
+import Menu from "./pages/Menu/Menu";
 import { Container } from "@material-ui/core";
 import { Route, Switch } from "react-router-dom";
 import { AuthContextProvider } from "./context/AuthContext";
@@ -28,6 +29,7 @@ function App() {
               <Route path="/search" component={Search} />
               <Route path="/login" component={Login} />
               <Route path="/account" component={Account} />
+              <Route path="/menu" component={Menu} />
             </Switch>
           </Container>
         </div>

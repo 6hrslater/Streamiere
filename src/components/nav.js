@@ -34,9 +34,10 @@ export default function SimpleBottomNavigation() {
             history.push("/series");
         } else if (value === 3) {
             history.push("/search");
-        }
-        else if (value === 4) {
+        } else if (value === 4) {
             history.push("/login");
+        } else if (value === 5) {
+            history.push("/menu");
         }
     }, [value, history]);
 
