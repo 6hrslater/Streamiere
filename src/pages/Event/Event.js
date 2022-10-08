@@ -7,9 +7,11 @@ import {
 import axios from "axios";
 import React from "react";
 import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "./Event.css";
 
 // import ApiCalendar from "react-google-calendar-api";
-
 
 const MyMapComponent = withScriptjs(
   withGoogleMap((props) => (
@@ -26,24 +28,40 @@ const MyMapComponent = withScriptjs(
   ))
 );
 
-const Event = () => {
+function PosterSlider() {
+  var settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    autoplay: true,
+    autoplaySpeed: 4000,
+  };
+  return (
+    <Slider {...settings}>
+      <div className="poster">
+        <img alt="spiderman" src="/posters/spiderman.jpeg"></img>
+      </div>
+      <div className="poster">
+        <img alt="lionking" src="/posters/lionking.jpeg"></img>
+      </div>
+      <div className="poster">
+        <img alt="jurassicpark" src="/posters/jurassicpark.jpeg"></img>    
+      </div>
+      <div className="poster">
+        <img alt="jumanji" src="/posters/jumanji.jpeg"></img>
+      </div>
+  </Slider>
+  );
+}
 
+const Event = () => {
   const handleSMS = () => {
     axios.get("http://127.0.0.1:3001/sendSMS");
   };
 
   return (
     <>
-    <Slider>
-      <div>
-        <img alt="spiderman" src="src/assets"></img>
-        <img alt="lionking" src="src/assets"></img>
-        <img alt="jurassicpark" src="src/assets"></img>
-        <img alt="jumanji" src="src/assets"></img>
-      </div>
-
-    </Slider>
-    
+      <PosterSlider />
       <button onClick={handleSMS}>Send SMS</button>
 
       <div style={{ width: "95vw", height: "80vh" }}>
@@ -59,6 +77,22 @@ const Event = () => {
   );
 };
 
+/* <Slider
+>
+  <div>
+    <img alt="spiderman" src="/posters/spiderman.jpeg"></img>
+  </div>
+  <div>
+    <img alt="lionking" src="/posters/lionking.jpeg"></img>
+  </div>
+  <div>
+    <img alt="jurassicpark" src="/posters/jurassicpark.jpeg"></img>    
+  </div>
+  <div>
+    <img alt="jumanji" src="/posters/jumanji.jpeg"></img>
+  </div>
+</Slider> */
+
 // const apiCalendar = new ApiCalendar(config);
 
 // const config = {
@@ -69,7 +103,5 @@ const Event = () => {
 //     "https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest",
 //   ],
 // };
-
-
 
 export default Event;
