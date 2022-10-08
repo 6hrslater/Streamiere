@@ -13,6 +13,7 @@ import "./ContentModal.css";
 import { Button } from "@material-ui/core";
 import YouTubeIcon from "@material-ui/icons/YouTube";
 import Carousel from "../carousel/carousel";
+import { Favorite } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -143,6 +144,15 @@ export default function TransitionsModal({ children, media_type, id }) {
                     href={`https://www.youtube.com/watch?v=${video}`}
                   >
                     Watch the Trailer
+                  </Button>
+                  <Button
+                  variant="contained"
+                  startIcon={<Favorite/>}
+                  color="secondary"
+                  target="__blank"
+                  href={``}
+                  >
+                    Add to favorites
                   </Button>
                 </div>
               </div>
