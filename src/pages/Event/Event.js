@@ -77,22 +77,6 @@ const Event = () => {
   );
 };
 
-/* <Slider
->
-  <div>
-    <img alt="spiderman" src="/posters/spiderman.jpeg"></img>
-  </div>
-  <div>
-    <img alt="lionking" src="/posters/lionking.jpeg"></img>
-  </div>
-  <div>
-    <img alt="jurassicpark" src="/posters/jurassicpark.jpeg"></img>    
-  </div>
-  <div>
-    <img alt="jumanji" src="/posters/jumanji.jpeg"></img>
-  </div>
-</Slider> */
-
 // const apiCalendar = new ApiCalendar(config);
 
 // const config = {
