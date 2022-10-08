@@ -1,0 +1,7 @@
+.e-calendar {
+    max-width: 800px;
+}
+.e-calendar .e-content table {
+    height: 200px;
+    width: 600px;
+}
