@@ -1,13 +1,7 @@
-<<<<<<< HEAD
 .e-calendar {
     max-width: 800px;
 }
 .e-calendar .e-content table {
     height: 200px;
     width: 600px;
-=======
-.poster {
-  display: flex !important; 
-  justify-content: center;
->>>>>>> 0651b143e1ac09bc75d6cf23704f102d20775f36
-}
+ }
