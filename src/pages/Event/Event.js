@@ -5,8 +5,10 @@ import {
   Marker,
 } from "react-google-maps";
 import axios from "axios";
+import React from "react";
+import Slider from "react-slick";
 
-import ApiCalendar from "react-google-calendar-api";
+// import ApiCalendar from "react-google-calendar-api";
 
 
 const MyMapComponent = withScriptjs(
@@ -32,6 +34,16 @@ const Event = () => {
 
   return (
     <>
+    <Slider>
+      <div>
+        <img alt="spiderman" src="src/assets"></img>
+        <img alt="lionking" src="src/assets"></img>
+        <img alt="jurassicpark" src="src/assets"></img>
+        <img alt="jumanji" src="src/assets"></img>
+      </div>
+
+    </Slider>
+    
       <button onClick={handleSMS}>Send SMS</button>
 
       <div style={{ width: "95vw", height: "80vh" }}>
@@ -47,16 +59,16 @@ const Event = () => {
   );
 };
 
-const apiCalendar = new ApiCalendar(config);
+// const apiCalendar = new ApiCalendar(config);
 
-const config = {
-  clientId: "<CLIENT_ID>",
-  apiKey: "<API_KEY>",
-  scope: "https://www.googleapis.com/auth/calendar",
-  discoveryDocs: [
-    "https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest",
-  ],
-};
+// const config = {
+//   clientId: "<CLIENT_ID>",
+//   apiKey: "<API_KEY>",
+//   scope: "https://www.googleapis.com/auth/calendar",
+//   discoveryDocs: [
+//     "https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest",
+//   ],
+// };
 
 
 
