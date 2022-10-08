@@ -5,6 +5,8 @@ import {
   Marker,
 } from "react-google-maps";
 
+import ApiCalendar from 'react-google-calendar-api';
+
 const MyMapComponent = withScriptjs(
   withGoogleMap((props) => (
     <GoogleMap defaultZoom={8} defaultCenter={{ lat: 49.285782896422546, lng: -123.12319139162997 }}>
@@ -30,5 +32,19 @@ const Event = () => {
     </>
   );
 };
+
+const config = {
+  "clientId": "<CLIENT_ID>",
+  "apiKey": "<API_KEY>",
+  "scope": "https://www.googleapis.com/auth/calendar",
+  "discoveryDocs": [
+    "https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"
+  ]
+}
+
+const apiCalendar = new ApiCalendar(config)
+
+
+
 
 export default Event;
