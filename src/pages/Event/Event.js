@@ -35,6 +35,9 @@ function  PosterSlider() {
   return (
     <Slider {...settings}>
       <div className="poster">
+        <img alt="wonder" src="/posters/wonder.png"></img>
+      </div>
+      <div className="poster">
         <img alt="freeguy" src="/posters/freeguy.png"></img>
       </div>
       <div className="poster">
@@ -42,9 +45,6 @@ function  PosterSlider() {
       </div>
       <div className="poster">
         <img alt="squad" src="/posters/squad.png"></img>
-      </div>
-      <div className="poster">
-        <img alt="wonder" src="/posters/wonder.png"></img>
       </div>
       <div className="poster">
         <img alt="nutcracker" src="/posters/nutcracker.png"></img>
@@ -75,6 +75,10 @@ const Event = () => {
               lng: location.lng,
             }}
             onClick={() => handleOnClick(location)}
+            icon={{
+              url: "/posters/popcorn.svg",
+              scaledSize: new window.google.maps.Size(25, 25)
+            }}
           />
         ))}
         {infoBox && (
