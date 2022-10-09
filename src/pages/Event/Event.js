@@ -14,11 +14,13 @@ import "./Event.css";
 import { CalendarComponent } from "@syncfusion/ej2-react-calendars";
 import "./default-style.css";
 
-const mapData = [{ id: 1, lat: 49.28015560764768, lng: -123.1124679569322 }];
-                { id: 2, lat: 49.29466859584727, lng: -123.15013078066137 },
-                { id: 3, lat: 49.28312864715313, lng: -123.12036421319347 },
-                { id: 4, lat: 49.28038474652219, lng: -123.11567573382207 },
-                { id: 5, lat: 49.22837097226975, lng: -123.00642533038497 },
+const mapData = [
+  { id: 1, lat: 49.28015560764768, lng: -123.1124679569322 },
+  { id: 2, lat: 49.29466859584727, lng: -123.15013078066137 },
+  { id: 3, lat: 49.28312864715313, lng: -123.12036421319347 },
+  { id: 4, lat: 49.28038474652219, lng: -123.11567573382207 },
+  { id: 5, lat: 49.22837097226975, lng: -123.00642533038497 },
+];
 
 function PosterSlider() {
   var settings = {
@@ -48,6 +50,7 @@ function PosterSlider() {
 
 const Event = () => {
   const [infoBox, setInfoBox] = useState(null);
+
   const handleOnClick = (data) => {
     setInfoBox(data);
     console.log("handleonclick", data, infoBox);
@@ -66,13 +69,22 @@ const Event = () => {
               lat: location.lat,
               lng: location.lng,
             }}
+            onClick={() => handleOnClick(location)}
           />
         ))}
+        {infoBox && (
+          <InfoWindow
+            position={{
+              lat: infoBox.lat,
+              lng: infoBox.lng,
+            }}
+          >
+            <div>Movie location</div>
+          </InfoWindow>
+        )}
       </GoogleMap>
     ))
   );
-  
-  onClick={() => handleOnClick(location)}
 
   const dateValue = new Date(
     new Date().getFullYear(),
