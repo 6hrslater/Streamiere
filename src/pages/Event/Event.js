@@ -10,6 +10,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Event.css";
+import {CalendarComponent} from '@syncfusion/ej2-react-calendars'
 
 // import ApiCalendar from "react-google-calendar-api";
 
@@ -55,6 +56,9 @@ function PosterSlider() {
 }
 
 const Event = () => {
+  const dateValue: Date = new Date(new Date().getFullYear(), new Date().getMonth(), 10);
+  const startDate: Date = new Date(new Date().getFullYear(), new Date().getMonth(), 6);
+  const endDate: Date = new Date(new Date().getFullYear(), new Date().getMonth(), 25);
   const handleSMS = () => {
     axios.get("http://127.0.0.1:3001/sendSMS");
   };
@@ -65,6 +69,16 @@ const Event = () => {
       <button onClick={handleSMS}>Send SMS</button>
 
       <div style={{ width: "95vw", height: "80vh" }}>
+      <div>
+      <CalendarComponent 
+      value={dateValue} 
+      min={startDate} 
+      max={endDate}
+      isMultiSelection={true}
+      start="Month"
+      depth="Week"> 
+      </CalendarComponent>
+      </div>
         <MyMapComponent
           isMarkerShown
           googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.REACT_APP_GOOGLE_KEY}`}
