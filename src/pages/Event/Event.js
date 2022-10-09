@@ -48,6 +48,10 @@ function PosterSlider() {
 
 const Event = () => {
   const [infoBox, setInfoBox] = useState(null);
+  const handleOnClick = (data) => {
+    setInfoBox(data);
+    console.log("handleonclick", data, infoBox);
+  };
 
   const MyMapComponent = withScriptjs(
     withGoogleMap((props) => (
@@ -67,6 +71,8 @@ const Event = () => {
       </GoogleMap>
     ))
   );
+  
+  onClick={() => handleOnClick(location)}
 
   const dateValue = new Date(
     new Date().getFullYear(),
