@@ -14,19 +14,84 @@ import "./Event.css";
 import { CalendarComponent } from "@syncfusion/ej2-react-calendars";
 
 const mapData = [
-  { id: 1, lat: 49.28015560764768, lng: -123.1124679569322 },
-  { id: 2, lat: 49.29466859584727, lng: -123.15013078066137 },
-  { id: 3, lat: 49.28312864715313, lng: -123.12036421319347 },
-  { id: 4, lat: 49.28038474652219, lng: -123.11567573382207 },
-  { id: 5, lat: 49.22837097226975, lng: -123.00642533038497 },
-  { id: 6, lat: 49.31023216008967, lng: -123.08144613230328 },
-  { id: 7, lat: 49.32791541374335, lng: -123.13797207376976 },
-  { id: 8, lat: 49.20454401827205, lng: -122.90378715410837 },
-  { id: 9, lat: 49.32707485038767, lng: -123.15929995921132 },
-  { id: 10, lat: 49.17573794045822, lng: -123.13224365921565 },
-  { id: 11, lat: 49.18430538670743, lng: -122.84934959063756 },
-  { id: 12, lat: 49.06325279484487, lng: -122.32453010339643 },
-  { id: 13, lat: 49.2535568257237, lng: -123.12367624043722 },
+  {
+    id: 1,
+    name: "Avengers",
+    lat: 49.28015560764768,
+    lng: -123.1124679569322,
+  },
+  {
+    id: 2,
+    name: "Free Guy",
+    lat: 49.29466859584727,
+    lng: -123.15013078066137,
+  },
+  {
+    id: 3,
+    name: "Nutcracker",
+    lat: 49.28312864715313,
+    lng: -123.12036421319347,
+  },
+  {
+    id: 4,
+    name: "The Sucide Squad",
+    lat: 49.28038474652219,
+    lng: -123.11567573382207,
+  },
+  {
+    id: 5,
+    name: "Wonder",
+    lat: 49.22837097226975,
+    lng: -123.00642533038497,
+  },
+  {
+    id: 6,
+    name: "Avengers",
+    lat: 49.31023216008967,
+    lng: -123.08144613230328,
+  },
+  {
+    id: 7,
+    name: "Free Guy",
+    lat: 49.32791541374335,
+    lng: -123.13797207376976,
+  },
+  {
+    id: 8,
+    name: "Nutcracker",
+    lat: 49.20454401827205,
+    lng: -122.90378715410837,
+  },
+  {
+    id: 9,
+    name: "The Sucide Squad",
+    lat: 49.32707485038767,
+    lng: -123.15929995921132,
+  },
+  {
+    id: 10,
+    name: "Wonder",
+    lat: 49.17573794045822,
+    lng: -123.13224365921565,
+  },
+  {
+    id: 11,
+    name: "Avengers",
+    lat: 49.18430538670743,
+    lng: -122.84934959063756,
+  },
+  {
+    id: 12,
+    name: "Free Guy",
+    lat: 49.06325279484487,
+    lng: -122.32453010339643,
+  },
+  {
+    id: 13,
+    name: "Nutcracker",
+    lat: 49.2535568257237,
+    lng: -123.12367624043722,
+  },
 ];
 
 function PosterSlider() {
@@ -69,7 +134,7 @@ const Event = () => {
   const MyMapComponent = withScriptjs(
     withGoogleMap((props) => (
       <GoogleMap
-        defaultZoom={13}
+        defaultZoom={12}
         defaultCenter={{ lat: 49.285782896422546, lng: -123.12319139162997 }}
         defaultOptions={{
           mapTypeControl: false,
@@ -99,7 +164,7 @@ const Event = () => {
           >
             <div
               style={{
-                color: "white",
+                color: 'black',
                 width: "150px",
                 minHeight: "50px",
                 padding: 15,
@@ -109,9 +174,10 @@ const Event = () => {
                 flexDirection: "column",
                 alignItems: "center",
                 fontFamily: "montserrat",
+                fontSize: 15
               }}
             >
-              {mapData.id}
+              Vancouver Movie night
             </div>
           </InfoWindow>
         )}
