@@ -1,7 +1,4 @@
-.e-calendar {
-    max-width: 800px;
+.poster {
+  display: flex !important; 
+  justify-content: center;
 }
-.e-calendar .e-content table {
-    height: 200px;
-    width: 600px;
- }
