@@ -22,9 +22,14 @@ const mapData = [
   { id: 6, lat: 49.31023216008967, lng: -123.08144613230328 },
   { id: 7, lat: 49.32791541374335, lng: -123.13797207376976 },
   { id: 8, lat: 49.20454401827205, lng: -122.90378715410837 },
+  { id: 9, lat: 49.32707485038767, lng: -123.15929995921132 },
+  { id: 10, lat: 49.17573794045822, lng: -123.13224365921565 },
+  { id: 11, lat: 49.18430538670743, lng: -122.84934959063756 },
+  { id: 12, lat: 49.06325279484487, lng: -122.32453010339643 },
+  { id: 13, lat: 49.2535568257237, lng: -123.12367624043722 },
 ];
 
-function  PosterSlider() {
+function PosterSlider() {
   var settings = {
     dots: true,
     infinite: true,
@@ -64,8 +69,12 @@ const Event = () => {
   const MyMapComponent = withScriptjs(
     withGoogleMap((props) => (
       <GoogleMap
-        defaultZoom={10}
+        defaultZoom={13}
         defaultCenter={{ lat: 49.285782896422546, lng: -123.12319139162997 }}
+        defaultOptions={{
+          mapTypeControl: false,
+          streetViewControl: false,
+        }}
       >
         {mapData.map((location) => (
           <Marker
@@ -77,7 +86,7 @@ const Event = () => {
             onClick={() => handleOnClick(location)}
             icon={{
               url: "/posters/popcorn.svg",
-              scaledSize: new window.google.maps.Size(25, 25)
+              scaledSize: new window.google.maps.Size(25, 25),
             }}
           />
         ))}
@@ -90,11 +99,19 @@ const Event = () => {
           >
             <div
               style={{
-                color: "blue",
-                fontSize: "1.3vw",
+                color: "white",
+                width: "150px",
+                minHeight: "50px",
+                padding: 15,
+                opacity: 0.5,
+                borderRadius: 10,
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                fontFamily: "montserrat",
               }}
             >
-              Movie location
+              {mapData.id}
             </div>
           </InfoWindow>
         )}
