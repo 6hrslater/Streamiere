@@ -12,7 +12,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Event.css";
 import { CalendarComponent } from "@syncfusion/ej2-react-calendars";
-import "./default-style.css";
+
 
 const mapData = [
   { id: 1, lat: 49.28015560764768, lng: -123.1124679569322 },
