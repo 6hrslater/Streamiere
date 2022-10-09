@@ -19,9 +19,12 @@ const mapData = [
   { id: 3, lat: 49.28312864715313, lng: -123.12036421319347 },
   { id: 4, lat: 49.28038474652219, lng: -123.11567573382207 },
   { id: 5, lat: 49.22837097226975, lng: -123.00642533038497 },
+  { id: 6, lat: 49.31023216008967, lng: -123.08144613230328 },
+  { id: 7, lat: 49.32791541374335, lng: -123.13797207376976 },
+  { id: 8, lat: 49.20454401827205, lng: -122.90378715410837 },
 ];
 
-function PosterSlider() {
+function  PosterSlider() {
   var settings = {
     dots: true,
     infinite: true,
@@ -32,16 +35,19 @@ function PosterSlider() {
   return (
     <Slider {...settings}>
       <div className="poster">
-        <img alt="spiderman" src="/posters/spiderman.jpeg"></img>
+        <img alt="freeguy" src="/posters/freeguy.png"></img>
       </div>
       <div className="poster">
-        <img alt="lionking" src="/posters/lionking.jpeg"></img>
+        <img alt="avengers.jpeg" src="/posters/avengers.png"></img>
       </div>
       <div className="poster">
-        <img alt="jurassicpark" src="/posters/jurassicpark.jpeg"></img>
+        <img alt="squad" src="/posters/squad.png"></img>
       </div>
       <div className="poster">
-        <img alt="jumanji" src="/posters/jumanji.jpeg"></img>
+        <img alt="wonder" src="/posters/wonder.png"></img>
+      </div>
+      <div className="poster">
+        <img alt="nutcracker" src="/posters/nutcracker.png"></img>
       </div>
     </Slider>
   );
@@ -81,7 +87,7 @@ const Event = () => {
             <div
               style={{
                 color: "blue",
-                fontSize: "1.3vw"
+                fontSize: "1.3vw",
               }}
             >
               Movie location
@@ -129,7 +135,7 @@ const Event = () => {
           googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.REACT_APP_GOOGLE_KEY}`}
           loadingElement={<div style={{ height: `100%` }} />}
           containerElement={<div style={{ height: `100%` }} />}
-          mapElement={<div style={{ height: `100%` }} />}
+          mapElement={<div style={{ height: `65%` }} />}
         />
       </div>
     </>
