@@ -13,7 +13,6 @@ import "slick-carousel/slick/slick-theme.css";
 import "./Event.css";
 import { CalendarComponent } from "@syncfusion/ej2-react-calendars";
 
-
 const mapData = [
   { id: 1, lat: 49.28015560764768, lng: -123.1124679569322 },
   { id: 2, lat: 49.29466859584727, lng: -123.15013078066137 },
@@ -79,7 +78,14 @@ const Event = () => {
               lng: infoBox.lng,
             }}
           >
-            <div>Movie location</div>
+            <div
+              style={{
+                color: "blue",
+                fontSize: "1.3vw"
+              }}
+            >
+              Movie location
+            </div>
           </InfoWindow>
         )}
       </GoogleMap>
