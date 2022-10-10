@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { UserAuth } from "../../context/AuthContext";
 import { useHistory } from "react-router-dom";
-
+import axios from "axios";
 
 const Account = () => {
   const { logOut, user } = UserAuth();
@@ -21,7 +21,9 @@ const Account = () => {
     }
   }, [user]);
 
-
+  const handleSMS = () => {
+    axios.get("http://127.0.0.1:3001/sendSMS");
+  };
 
   return (
     <div className="w-[300px] m-auto">
@@ -34,7 +36,7 @@ const Account = () => {
         Logout
       </button>
 
-
+      <button onClick={handleSMS}>Send SMS</button>
     </div>
   );
 };

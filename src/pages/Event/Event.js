@@ -164,7 +164,7 @@ const Event = () => {
           >
             <div
               style={{
-                color: 'black',
+                color: "black",
                 width: "150px",
                 minHeight: "50px",
                 padding: 15,
@@ -174,7 +174,7 @@ const Event = () => {
                 flexDirection: "column",
                 alignItems: "center",
                 fontFamily: "montserrat",
-                fontSize: 15
+                fontSize: 15,
               }}
             >
               Vancouver Movie night
@@ -203,9 +203,10 @@ const Event = () => {
 
   return (
     <>
+      <div className="poster" style={{ width: "95vw", height: "80vh" }}>
+        <img alt="movienight" src="/posters/movienight.jpg"></img>
+      </div>
       <PosterSlider />
-      <button onClick={handleSMS}>Send SMS</button>
-
       <div style={{ width: "95vw", height: "80vh" }}>
         <div>
           <CalendarComponent
@@ -217,6 +218,7 @@ const Event = () => {
             depth="Week"
           ></CalendarComponent>
         </div>
+        <button onClick={handleSMS}>Send SMS</button>
         <MyMapComponent
           isMarkerShown
           googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.REACT_APP_GOOGLE_KEY}`}
