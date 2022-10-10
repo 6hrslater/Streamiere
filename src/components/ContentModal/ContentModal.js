@@ -135,7 +135,7 @@ export default function TransitionsModal({ children, media_type, id }) {
                   <div>
                     <Carousel id={id} media_type={media_type} />
                   </div>
-
+                    <space></space>
                   <Button
                     variant="contained"
                     startIcon={<YouTubeIcon />}
@@ -145,15 +145,17 @@ export default function TransitionsModal({ children, media_type, id }) {
                   >
                     Watch the Trailer
                   </Button>
+                  
                   <Button
                   variant="contained"
                   startIcon={<Favorite/>}
-                  color="secondary"
+                  color="primary"
                   target="__blank"
                   href={``}
                   >
                     Add to favorites
                   </Button>
+            
                 </div>
               </div>
             </div>
