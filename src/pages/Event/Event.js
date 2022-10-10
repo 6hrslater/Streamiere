@@ -207,21 +207,25 @@ const Event = () => {
         <img alt="movienight" src="/posters/movienight.jpg"></img>
       </div>
       <div>
+        <br /><br />
         Every year there are free outdoor movies at venues like Canada Place,
         Stanley Park, downtown Vancouver and across the Lower Mainland. NOTE: On
         Wednesday, August 17th, the movie Pitch Perfect. shows at Sunset Cinema
         in the plaza outside the Queen Elizabeth Theatre in downtown Vancouver.
-        To learn about the above shows as well as others on other dates at venues throughout the
-        Lower Mainland, continue reading!
+        To learn about the above shows as well as others on other dates at
+        venues throughout the Lower Mainland, continue reading!
+        <br /><br /><br />
       </div>
       <PosterSlider />
       <div>
+        <br /><br /><br />
         Free Outdoor Movies in the Lower Mainland At each outdoor movie location
         spectators are encouraged to bring their own blankets and lawn chairs,
         plus snacks and picnics for those that want them. The exception are any
         drive-in movies, where the organizers might want people to stay in their
         vehicles. Below are some locations that are showing or are likely to
         show movies in 2022. Details are as on the calendar and the map below.
+        <br /><br /><br />
       </div>
 
       <div style={{ width: "95vw", height: "80vh" }}>
