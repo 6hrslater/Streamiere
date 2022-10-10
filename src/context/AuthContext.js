@@ -5,7 +5,8 @@ import {
   signOut,
   onAuthStateChanged,
 } from 'firebase/auth';
-import { auth } from '../firebase';
+import { auth, db } from '../firebase';
+import {setDoc,doc} from 'firebase/firestore'
 
 const AuthContext = createContext();
 
@@ -16,6 +17,9 @@ export const AuthContextProvider = ({ children }) => {
     const provider = new GoogleAuthProvider();
     // signInWithPopup(auth, provider);
     signInWithRedirect(auth, provider)
+    setDoc(doc(db, 'users'), {
+      savedShows: []
+    })
   };
 
   const logOut = () => {

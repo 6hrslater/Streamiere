@@ -11,7 +11,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Event.css";
-import { CalendarComponent } from "@syncfusion/ej2-react-calendars";
+
 
 const mapData = [
   {
@@ -229,16 +229,7 @@ const Event = () => {
       </div>
 
       <div style={{ width: "95vw", height: "80vh" }}>
-        <div>
-          <CalendarComponent
-            value={dateValue}
-            min={startDate}
-            max={endDate}
-            isMultiSelection={true}
-            start="Month"
-            depth="Week"
-          ></CalendarComponent>
-        </div>
+        
         <button onClick={handleSMS}>Send SMS</button>
         <MyMapComponent
           isMarkerShown
