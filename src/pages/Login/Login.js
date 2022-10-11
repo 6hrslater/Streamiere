@@ -17,6 +17,7 @@ const Login = () => {
   };
 
   useEffect(() => {
+    window.scroll(0, 0);
     if (user) {
       history.push("/account");
     }

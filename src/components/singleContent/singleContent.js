@@ -39,6 +39,8 @@ const SingleContent = ({
         alert('Please log in to save a movie');
       }
     };
+
+    console.log(saveShow)
     
     return (
         <ContentModal media_type={media_type} id={id}>
