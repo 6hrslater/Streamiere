@@ -154,16 +154,6 @@ export default function TransitionsModal({ children, media_type, id }) {
                   >
                     Watch the Trailer
                   </Button>
-                  
-                  <Button 
-                  variant="contained"
-                  startIcon={<Favorite/>}
-                  color="primary"
-                  target="__blank"
-                  href={``}
-                  >
-                    Add to favorites
-                  </Button>
             
                 </div>
               </div>

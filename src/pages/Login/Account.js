@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { UserAuth } from "../../context/AuthContext";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
+import SavedShows from "../../components/addFavorite";
 
 const Account = () => {
   const { logOut, user } = UserAuth();
@@ -26,6 +27,7 @@ const Account = () => {
   };
 
   return (
+    <>
     <div className="w-[300px] m-auto">
       <h1 className="text-center text-2xl font-bold pt-12">Account</h1>
       <div>
@@ -38,6 +40,11 @@ const Account = () => {
 
       <button onClick={handleSMS}>Send SMS</button>
     </div>
+    <div className='w-full text-white'>
+      <h1 className="text-3xl md:5xl font-bold">Liked Shows</h1>
+    </div>
+    <SavedShows />
+    </>
   );
 };
 
