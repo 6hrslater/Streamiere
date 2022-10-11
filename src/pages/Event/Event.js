@@ -141,14 +141,14 @@ const Event = () => {
           streetViewControl: false,
         }}
       >
-        {mapData.map((location) => (
+        {mapData.map((movie) => (
           <Marker
-            key={location.id}
+            key={movie.id}
             position={{
-              lat: location.lat,
-              lng: location.lng,
+              lat: movie.lat,
+              lng: movie.lng,
             }}
-            onClick={() => handleOnClick(location)}
+            onClick={() => handleOnClick(movie)}
             icon={{
               url: "/posters/popcorn.svg",
               scaledSize: new window.google.maps.Size(25, 25),
@@ -177,7 +177,7 @@ const Event = () => {
                 fontSize: 15,
               }}
             >
-              Vancouver Movie night
+              {infoBox.name}
             </div>
           </InfoWindow>
         )}
