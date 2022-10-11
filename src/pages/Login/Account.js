@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { UserAuth } from "../../context/AuthContext";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
-import SavedShows from "../../components/addFavorite";
+import SavedShows from "../../components/saveShows";
 
 const Account = () => {
   const { logOut, user } = UserAuth();
