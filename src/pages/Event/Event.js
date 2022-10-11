@@ -12,7 +12,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Event.css";
 
-
 const mapData = [
   {
     id: 1,
@@ -157,6 +156,10 @@ const Event = () => {
         ))}
         {infoBox && (
           <InfoWindow
+            options={{ pixelOffset: new window.google.maps.Size(0, -30) }}
+            style={{
+              marginBottom: "100px",
+            }}
             position={{
               lat: infoBox.lat,
               lng: infoBox.lng,
@@ -191,34 +194,44 @@ const Event = () => {
 
   return (
     <>
-      <div className="poster" style={{ width: "95vw", height: "80vh" }}>
-        <img alt="movienight" src="/posters/movienight.jpg"></img>
+      <div className="poster">
+        <img
+          alt="movienight"
+          src="/posters/movienight.jpg"
+          style={{ width: "80%" }}
+        ></img>
       </div>
       <div>
-        <br /><br />
+        <br />
+        <br />
         Every year there are free outdoor movies at venues like Canada Place,
         Stanley Park, downtown Vancouver and across the Lower Mainland. NOTE: On
         Wednesday, August 17th, the movie Pitch Perfect. shows at Sunset Cinema
         in the plaza outside the Queen Elizabeth Theatre in downtown Vancouver.
         To learn about the above shows as well as others on other dates at
         venues throughout the Lower Mainland, continue reading!
-        <br /><br /><br />
+        <br />
+        <br />
+        <br />
       </div>
       <PosterSlider />
       <div>
-        <br /><br /><br />
+        <br />
+        <br />
+        <br />
         Free Outdoor Movies in the Lower Mainland At each outdoor movie location
         spectators are encouraged to bring their own blankets and lawn chairs,
         plus snacks and picnics for those that want them. The exception are any
         drive-in movies, where the organizers might want people to stay in their
         vehicles. Below are some locations that are showing or are likely to
         show movies in 2022. Details are as on the calendar and the map below.
-        <br /><br /><br />
+        <br />
+        <br />
+        <br />
       </div>
 
-      <div style={{ width: "95vw", height: "80vh" }}>
-        
-        <button onClick={handleSMS}>Send SMS</button>
+      <div style={{ height: "80vh", display: "flex", flexDirection: "column" }}>
+        <button classNonClick={handleSMS}>Send SMS</button>
         <MyMapComponent
           isMarkerShown
           googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.REACT_APP_GOOGLE_KEY}`}
@@ -230,5 +243,6 @@ const Event = () => {
     </>
   );
 };
+
 
 export default Event;
