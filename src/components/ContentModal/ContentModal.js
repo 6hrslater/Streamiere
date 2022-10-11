@@ -14,6 +14,10 @@ import { Button } from "@material-ui/core";
 import YouTubeIcon from "@material-ui/icons/YouTube";
 import Carousel from "../carousel/carousel";
 import { Favorite } from "@material-ui/icons";
+import { UserAuth } from '../../context/AuthContext';
+import { db } from '../../firebase';
+import { arrayUnion, doc, updateDoc } from 'firebase/firestore';
+
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -38,6 +42,7 @@ export default function TransitionsModal({ children, media_type, id }) {
   const [open, setOpen] = useState(false);
   const [content, setContent] = useState();
   const [video, setVideo] = useState();
+  
 
   const handleOpen = () => {
     setOpen(true);
@@ -69,6 +74,10 @@ export default function TransitionsModal({ children, media_type, id }) {
     fetchVideo();
     // eslint-disable-next-line
   }, []);
+
+  const test = () => {
+    console.log(test)
+  }
 
   return (
     <>
@@ -146,7 +155,7 @@ export default function TransitionsModal({ children, media_type, id }) {
                     Watch the Trailer
                   </Button>
                   
-                  <Button
+                  <Button 
                   variant="contained"
                   startIcon={<Favorite/>}
                   color="primary"
