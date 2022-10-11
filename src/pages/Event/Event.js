@@ -185,18 +185,6 @@ const Event = () => {
     ))
   );
 
-  const dateValue = new Date(
-    new Date().getFullYear(),
-    new Date().getMonth(),
-    10
-  );
-  const startDate = new Date(
-    new Date().getFullYear(),
-    new Date().getMonth(),
-    6
-  );
-  const endDate = new Date(new Date().getFullYear(), new Date().getMonth(), 25);
-
   const handleSMS = () => {
     axios.get("http://127.0.0.1:3001/sendSMS");
   };

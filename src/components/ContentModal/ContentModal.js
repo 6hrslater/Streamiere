@@ -13,10 +13,7 @@ import "./ContentModal.css";
 import { Button } from "@material-ui/core";
 import YouTubeIcon from "@material-ui/icons/YouTube";
 import Carousel from "../carousel/carousel";
-import { Favorite } from "@material-ui/icons";
-import { UserAuth } from '../../context/AuthContext';
-import { db } from '../../firebase';
-import { arrayUnion, doc, updateDoc } from 'firebase/firestore';
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -28,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     width: "90%",
     height: "80%",
-    backgroundColor: "#39445a",
+    backgroundColor: "#36393e",
     border: "1px solid #282c34",
     borderRadius: 10,
     color: "white",
@@ -75,9 +72,7 @@ export default function TransitionsModal({ children, media_type, id }) {
     // eslint-disable-next-line
   }, []);
 
-  const test = () => {
-    console.log(test)
-  }
+ 
 
   return (
     <>
