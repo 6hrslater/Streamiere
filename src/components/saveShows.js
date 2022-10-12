@@ -4,10 +4,33 @@ import { db } from '../firebase';
 import { updateDoc, doc, onSnapshot } from 'firebase/firestore';
 import { AiOutlineClose } from 'react-icons/ai';
 import { img_300, unavailable } from "../config/config";
-import { Badge } from "@material-ui/core";
+import { Badge, Button } from "@material-ui/core";
 import ContentModal from "./ContentModal/ContentModal"
-import axios from 'axios';
-import "./singleContent/singleContent.css"
+import "./ContentModal/ContentModal.css"
+import { makeStyles } from "@material-ui/core/styles";
+import Grid from "@material-ui/core/Grid"
+import { whileStatement } from '@babel/types';
+import SingleContent from './singleContent/singleContent';
+
+
+const useStyles = makeStyles((theme) => ({
+  modal: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  paper: {
+    width: "90%",
+    height: "80%",
+    backgroundColor: "#36393e",
+    border: "1px solid #282c34",
+    borderRadius: 10,
+    color: "white",
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing(1, 1, 3),
+  },
+  
+}));
 
 const SavedShows = (
   id,
@@ -19,11 +42,13 @@ const SavedShows = (
 ) => {
   const [movies, setMovies] = useState([]);
   const { user } = UserAuth();
+  const classes = useStyles();
   
 
   useEffect(() => {
     onSnapshot(doc(db, 'users', `${user?.email}`), (doc) => {
       setMovies(doc.data()?.savedShows);
+      console.log(doc.data()?.savedShows)
     });
   }, [user?.email]);
 
@@ -31,9 +56,12 @@ const SavedShows = (
   const deleteShow = async (passedID) => {
       try {
         const result = movies.filter((item) => item.id !== passedID)
+        console.log(passedID)
+        console.log(result)
         await updateDoc(movieRef, {
             savedShows: result
         })
+        setMovies(result);
       } catch (error) {
           console.log(error)
       }
@@ -41,28 +69,34 @@ const SavedShows = (
 
   return (
     <>
-    {movies.map((item, id) => (
-      <ContentModal media_type={media_type} id={id}>
+    <Grid container spacing={4}>
+    {movies.map((item) => (
+      <Grid item xs={2.5}>
+        
+      {<ContentModal className={classes.modal} media_type={media_type} id={item.id}>
             <Badge
                 badgeContent={vote_average}
                 color={vote_average > 6 ? "primary" : "secondary"}
             />
             <img
                 className="poster"
-                src={poster ? `${img_300}${poster}` : unavailable}
+                src={item.poster ? `${img_300}${item.poster}` : unavailable}
                 alt={title}
             />
-            <b className="title">{title}</b>
+            <b className="title">{item.title}</b>
             <span className="subTitle">
                 {media_type === "tv" ? "TV Series" : "Movie"}
                 <span className="subTitle">{date}</span>
             </span>
-            <p onClick={()=> deleteShow(id)} className='absolute text-gray-300 top-4 right-4'><AiOutlineClose /></p>
+            
               
-        </ContentModal>
+        </ContentModal> }
+        <Button variant='contained' onClick={()=> deleteShow(item.id)} className='cross button'><AiOutlineClose /></Button>
+         </Grid>
+      
 
         ))}
-                 
+           </Grid>      
               
     </>
   );
