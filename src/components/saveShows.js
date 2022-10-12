@@ -6,9 +6,11 @@ import { AiOutlineClose } from 'react-icons/ai';
 import { img_300, unavailable } from "../config/config";
 import { Badge } from "@material-ui/core";
 import ContentModal from "./ContentModal/ContentModal"
+import axios from 'axios';
+import "./singleContent/singleContent.css"
 
 const SavedShows = (
-    id,
+  id,
     poster,
     title,
     date,
@@ -17,7 +19,7 @@ const SavedShows = (
 ) => {
   const [movies, setMovies] = useState([]);
   const { user } = UserAuth();
-
+  
 
   useEffect(() => {
     onSnapshot(doc(db, 'users', `${user?.email}`), (doc) => {
@@ -39,6 +41,7 @@ const SavedShows = (
 
   return (
     <>
+    {movies.map((item, id) => (
       <ContentModal media_type={media_type} id={id}>
             <Badge
                 badgeContent={vote_average}
@@ -57,6 +60,8 @@ const SavedShows = (
             <p onClick={()=> deleteShow(id)} className='absolute text-gray-300 top-4 right-4'><AiOutlineClose /></p>
               
         </ContentModal>
+
+        ))}
                  
               
     </>
